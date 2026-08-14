@@ -264,6 +264,10 @@
             vertical-align: top;
             color: var(--text);
         }
+        table.schedule th:not(:last-child),
+        table.schedule td:not(:last-child) {
+            padding-right: 32px;
+        }
         table.schedule td.time {
             width: 180px;
             font-variant-numeric: tabular-nums;
@@ -488,13 +492,14 @@
             <div class="hidden md:flex space-x-6 text-sm">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#challenge" class="nav-link">Challenge</a>
-                <a href="#callforpapers" class="nav-link">Call for Papers</a>
-                <!-- <a href="#dataset" class="nav-link">Dataset</a> -->
-                <!-- <a href="#leaderboard" class="nav-link">Leaderboard</a> -->
                 <a href="#speakers" class="nav-link">Speakers</a>
                 <a href="#schedule" class="nav-link">Schedule</a>
                 <a href="#organizers" class="nav-link">Organizers</a>
+                <a href="#technical-committee" class="nav-link">Technical Committee</a>
+                <a href="#callforpapers" class="nav-link">Call for Papers</a>
+                <a href="#challenge" class="nav-link">Challenge</a>
+                <!-- <a href="#dataset" class="nav-link">Dataset</a> -->
+                <!-- <a href="#leaderboard" class="nav-link">Leaderboard</a> -->
                 <a href="#venue" class="nav-link">Venue</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -507,13 +512,14 @@
         <div id="mobile-menu" class="md:hidden hidden" style="background: var(--bg-soft); border-top: 1px solid var(--line); color: var(--text);">
             <a href="#home" class="block px-6 py-3 nav-link">Home</a>
             <a href="#about" class="block px-6 py-3 nav-link">About</a>
-            <a href="#challenge" class="block px-6 py-3 nav-link">Challenge</a>
-            <a href="#callforpapers" class="block px-6 py-3 nav-link">Call for Papers</a>
-            <!-- <a href="#dataset" class="block px-6 py-3 nav-link">Dataset</a> -->
-            <!-- <a href="#leaderboard" class="block px-6 py-3 nav-link">Leaderboard</a> -->
             <a href="#speakers" class="block px-6 py-3 nav-link">Speakers</a>
             <a href="#schedule" class="block px-6 py-3 nav-link">Schedule</a>
             <a href="#organizers" class="block px-6 py-3 nav-link">Organizers</a>
+            <a href="#technical-committee" class="block px-6 py-3 nav-link">Technical Committee</a>
+            <a href="#callforpapers" class="block px-6 py-3 nav-link">Call for Papers</a>
+            <a href="#challenge" class="block px-6 py-3 nav-link">Challenge</a>
+            <!-- <a href="#dataset" class="block px-6 py-3 nav-link">Dataset</a> -->
+            <!-- <a href="#leaderboard" class="block px-6 py-3 nav-link">Leaderboard</a> -->
             <a href="#venue" class="block px-6 py-3 nav-link">Venue</a>
             <a href="#contact" class="block px-6 py-3 nav-link">Contact</a>
         </div>
@@ -548,149 +554,22 @@
             </div>
         </section>
 
-        <section id="challenge">
-            <div class="section-heading"><h2>MedVidU Challenge</h2></div>
-            <div class="card-section">
-                <p>The MedVidU Challenge is built on the <a href="https://arxiv.org/abs/2512.06581" target="_blank" rel="noopener">MedVidBench</a> dataset (CVPR 2026), providing a unified evaluation across diverse tasks including Critical View of Safety (CVS) assessment, next action prediction, skill assessment, temporal action grounding, dense video captioning, and video summary &amp; region captioning. The benchmark spans four domains: laparoscopic surgery, open surgery, robotic surgery, and nursing.</p>
-
-                <p class="note-callout"><strong>Participation in the Challenge is optional.</strong> You are welcome to take part in the workshop by submitting a paper on medical video understanding without entering the Challenge &mdash; see the <a href="#callforpapers">Call for Papers</a> below for paper submission details.</p>
-
-                <div class="resource-tiles">
-                    <a class="resource-tile" href="challenge-guide.html">
-                        <div class="resource-icon"><i class="fas fa-book-open"></i></div>
-                        <div class="resource-title">Guide</div>
-                        <div class="resource-desc">Step-by-step instructions for participating in the challenge.</div>
-                    </a>
-                    <a class="resource-tile" href="https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal" target="_blank" rel="noopener">
-                        <div class="resource-icon"><i class="fas fa-database"></i></div>
-                        <div class="resource-title">Training Data</div>
-                        <div class="resource-desc">MedVidU ECCV 2026 train/val split, hosted on Hugging Face.</div>
-                    </a>
-                    <a class="resource-tile" href="https://huggingface.co/spaces/UII-AI/MedVidBench-Leaderboard" target="_blank" rel="noopener">
-                        <div class="resource-icon"><i class="fas fa-trophy"></i></div>
-                        <div class="resource-title">MedVidBench Leaderboard</div>
-                        <div class="resource-desc">Submit predictions on the MedVidBench test set and track standings.</div>
-                    </a>
-                </div>
-
-                <h3>Challenge Format</h3>
-                <p>See the <a href="challenge-guide.html">Challenge Guide</a> for detailed step-by-step instructions.</p>
-                <ul>
-                    <li>Download the MedVidU ECCV 2026 train/val split from <a href="https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal" target="_blank" rel="noopener">UII-AI/MedVidU_ECCV2026_TrainVal</a> and train your model.</li>
-                    <li>Run inference on the <a href="https://huggingface.co/datasets/UII-AI/MedVidBench" target="_blank" rel="noopener">MedVidBench</a> test set and submit your predictions to the <a href="https://huggingface.co/spaces/UII-AI/MedVidBench-Leaderboard" target="_blank" rel="noopener">MedVidBench Leaderboard</a>.</li>
-                    <!-- <li>Include the following with your submission: <strong>Model Name</strong>, <strong>Team Name</strong>, <strong>Authors</strong>, <strong>Institution</strong>, <strong>Email ID</strong> (mandatory for MedVidU ECCV 2026 Challenge participants), and set <strong>Remark: &ldquo;ECCV challenge&rdquo;</strong>.</li> -->
-                    <li>Challenge participants are <strong>required</strong> to submit a report on <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/MedVidU" target="_blank" rel="noopener">OpenReview</a> for the MedVidU Challenge.</li>
-                </ul>
-
-                <h3>Important Dates</h3>
-                <table class="dates">
-                    <tbody>
-                        <tr>
-                            <td class="label">Registration Opens &amp; Dataset Release (HuggingFace)</td>
-                            <td class="date live">May 20, 2026</td>
-                            <td class="countdown" style="color: #34D399; font-weight: 600;">Live now</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Public Validation Leaderboard Opens</td>
-                            <td class="date live">May 20, 2026</td>
-                            <td class="countdown" style="color: #34D399; font-weight: 600;">Live now</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Workshop Paper Submission (Mandatory for Challenge Participants)</td>
-                            <td class="date deadline"><s style="color: var(--text-faint); font-weight: 400;">July 13, 2026</s> July 27, 2026 (23:59 AoE)</td>
-                            <td class="countdown" data-deadline="2026-07-28T11:59:59Z">Loading&hellip;</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Challenge Deadline (Public Leaderboard Closes)</td>
-                            <td class="date deadline"><s style="color: var(--text-faint); font-weight: 400;">July 13, 2026</s> July 27, 2026 (23:59 AoE)</td>
-                            <td class="countdown" data-deadline="2026-07-28T11:59:59Z">Loading&hellip;</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="dates-note">*Deadlines are Anywhere on Earth (AoE). Timelines are subject to change.</p>
-
-                <p style="margin-top: 24px;">Top qualifying winners will get a chance to present their method in the workshop.</p>
-                <p>We plan to have an extended journal submission with the top qualifying teams.</p>
-                <p><strong>Prizes:</strong> 1st place &mdash; $800, 2nd place &mdash; $200. Prizes are sponsored by United Imaging Intelligence (UII), Boston, MA.</p>
-            </div>
-        </section>
-
-        <section id="callforpapers">
-            <div class="section-heading"><h2>Call for Papers</h2></div>
-            <div class="card-section">
-                <p>Please submit your manuscript formatted according to the ECCV 2026 author guidelines. Accepted papers are intended to be published in the ECCV 2026 workshop proceedings.</p>
-                <p>We encourage submissions reporting novel theories, methods, and applications of video understanding in medical and surgical settings &mdash; see the Topics of Interest below.</p>
-                <p class="note-callout"><strong>Note:</strong> MedVidU 2026 Challenge participants are <strong style="color: var(--text);">required</strong> to submit a paper. However, you can submit a paper <strong style="color: var(--text);">without</strong> taking part in the MedVidU Challenge.</p>
-
-                <div style="text-align: center; margin: 28px 0 8px;">
-                    <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/MedVidU" target="_blank" rel="noopener" class="btn btn-primary" style="color: #0b1220; font-size: clamp(15px, 1.5vw, 18px); padding: 14px 28px;">
-                        Submit on OpenReview
-                    </a>
-                </div>
-
-                <h3>Topics of Interest</h3>
-                <ul>
-                    <li>Temporal action grounding in medical video</li>
-                    <li>Dense video captioning for medical procedures</li>
-                    <li>Surgical tool detection and tracking</li>
-                    <li>Medical video foundation models and multimodal large language models</li>
-                    <li>Surgical phase and action recognition</li>
-                    <li>Medical scene understanding from videos and 3D/4D reconstruction</li>
-                    <li>Privacy-preserving analysis of surgical recordings</li>
-                    <li>Explainability and trustworthiness in AI for medical videos</li>
-                    <li>Efficient video representation learning for long medical procedures</li>
-                </ul>
-
-                <h3>Important Dates</h3>
-                <table class="dates">
-                    <tbody>
-                        <tr>
-                            <td class="label">Paper Submission</td>
-                            <td class="date"><s style="color: var(--text-faint);">July 13, 2026</s> July 27, 2026 (23:59 AoE)</td>
-                            <td class="countdown" data-deadline="2026-07-28T11:59:59Z">Loading&hellip;</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Paper Acceptance Notification</td>
-                            <td class="date">August 5, 2026</td>
-                            <td class="countdown" data-deadline="2026-08-06T11:59:59Z">Loading&hellip;</td>
-                        </tr>
-                        <tr>
-                            <td class="label">Camera Ready</td>
-                            <td class="date">August 15, 2026</td>
-                            <td class="countdown" data-deadline="2026-08-16T11:59:59Z">Loading&hellip;</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="dates-note">*All deadlines are Anywhere on Earth (AoE). Timelines are subject to change. Submit via <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/MedVidU" target="_blank" rel="noopener">OpenReview</a>.</p>
-            </div>
-        </section>
-
-        <!--
-        <section id="dataset">
-            <div class="section-heading"><h2>Dataset</h2></div>
-            <div class="card-section">
-                <p>MedVidBench &mdash; a multi-task medical video benchmark spanning four clinical and surgical domains.</p>
-                <div class="coming-soon" style="margin-top: 24px;">
-                    <strong>Dataset release coming soon</strong>
-                </div>
-            </div>
-        </section>
-
-        <section id="leaderboard">
-            <div class="section-heading"><h2>Leaderboard</h2></div>
-            <div class="card-section">
-                <p>Track community progress on the MedVidBench multi-task evaluation suite.</p>
-                <div class="coming-soon" style="margin-top: 24px;">
-                    <strong>Leaderboard coming soon</strong>
-                    The MedVidBench leaderboard will be hosted on HuggingFace and embedded here.
-                </div>
-            </div>
-        </section>
-        -->
-
         <section id="speakers">
             <div class="section-heading"><h2>Keynote Speakers</h2></div>
-            <p class="muted" style="text-align: center;">Speakers to be announced.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 text-center">
+                    <img src="img_keynote/LalithkumarSeenivasan.png" alt="Lalithkumar Seenivasan" class="profile-img rounded-full mx-auto mb-4" style="width: 192px; height: 192px;" onerror="this.onerror=null;this.src='https://placehold.co/192x192/131c2f/60A5FA?text=LS';">
+                    <h3 class="org-name"><a href="https://lalithjets.github.io/" target="_blank" rel="noopener">Lalithkumar Seenivasan</a></h3>
+                    <p class="org-affil c1"><a href="https://www.jhu.edu/" target="_blank" rel="noopener">Johns Hopkins University</a></p>
+                    <p class="org-bio">Lalithkumar Seenivasan is an Assistant Research Professor in the Department of Computer Science at Johns Hopkins University. Prior to this, he was a Postdoctoral Research Fellow in the ARCADE Lab at Johns Hopkins. His research focuses on vision-language models for surgical applications, including surgical visual question answering and scene graph generation, with the goal of building assistive and automation technologies for clinical training, surgical assistance, and clinical operations. He received his Ph.D. in Biomedical Engineering from the National University of Singapore and won the MICCAI 2023 STAR Award for SurgicalGPT.</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <img src="img_keynote/YuemingJin.jpg" alt="Yueming Jin" class="profile-img rounded-full mx-auto mb-4" style="width: 192px; height: 192px;" onerror="this.onerror=null;this.src='https://placehold.co/192x192/131c2f/60A5FA?text=YJ';">
+                    <h3 class="org-name"><a href="https://yuemingjin.github.io/" target="_blank" rel="noopener">Yueming Jin</a></h3>
+                    <p class="org-affil c2"><a href="https://nus.edu.sg/" target="_blank" rel="noopener">National University of Singapore</a></p>
+                    <p class="org-bio">Yueming Jin is an Assistant Professor (Presidential Young Professorship) in the Departments of Biomedical Engineering and Electrical &amp; Computer Engineering at the National University of Singapore, where she leads the IMVR Lab (Intelligent Medical Vision and Robotics). Her research focuses on AI for healthcare, with an emphasis on medical image computing and surgical data science, including multimodal medical AI and intelligent agents for robotic surgery. She was named to the Forbes 30 Under 30 Asia list (2024) and received the IJCARS-MICCAI 2021 Best Paper Award and the ICRA 2021 Best Paper Award in Medical Robotics.</p>
+                </div>
+            </div>
             <!--
             <p class="muted" style="text-align: center; margin-bottom: 40px;">Invited speakers (tentative).</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -715,26 +594,56 @@
         <section id="schedule">
             <div class="section-heading"><h2>Workshop Program</h2></div>
             <div class="card-section">
-                <p class="muted" style="text-align: center; margin-bottom: 32px;">Half-day in-person event &middot; Tentative schedule</p>
                 <table class="schedule">
                 <thead>
                     <tr>
                         <th>Time</th>
-                        <th>Activity</th>
+                        <th>Session</th>
+                        <th>Presenter(s)</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td class="time">13:30 &ndash; 13:45</td><td>Opening Remarks</td></tr>
-                    <tr class="keynote"><td class="time">13:45 &ndash; 14:25</td><td>Keynote #1 &mdash; 30 min talk + 10 min Q&amp;A</td></tr>
-                    <tr><td class="time">14:25 &ndash; 14:40</td><td>Accepted Paper Oral Presentation #1</td></tr>
-                    <tr><td class="time">14:40 &ndash; 14:55</td><td>Accepted Paper Oral Presentation #2</td></tr>
-                    <tr class="break"><td class="time">14:55 &ndash; 15:35</td><td>Coffee Break / Poster Session</td></tr>
-                    <tr class="keynote"><td class="time">15:35 &ndash; 16:15</td><td>Keynote #2 &mdash; 30 min talk + 10 min Q&amp;A</td></tr>
-                    <tr><td class="time">16:15 &ndash; 16:30</td><td>MedVidU Challenge: Introduction</td></tr>
-                    <tr><td class="time">16:30 &ndash; 16:50</td><td>Presentations from Top 2 Qualifying Teams (10 min each)</td></tr>
-                    <tr><td class="time">16:50 &ndash; 17:00</td><td>Challenge Awards &amp; Closing Remarks</td></tr>
+                    <tr><td class="time">13:30 &ndash; 13:45</td><td>Opening Remarks</td><td></td></tr>
+                    <tr class="keynote"><td class="time">13:45 &ndash; 14:25</td><td>Invited Talk</td><td>Lalithkumar Seenivasan</td></tr>
+                    <tr><td class="time">14:25 &ndash; 14:40</td><td>Oral Presentation: OphEdit: Training-Free Text-Guided Editing of Ophthalmic Surgical Video</td><td>Ritul Jangir, Arkya Jyoti Bagchi, Mangalton Okram, Saurabh Seetaram Korgaonkar, Aiman Farooq, Deepak Mishra</td></tr>
+                    <tr><td class="time">14:40 &ndash; 14:55</td><td>Oral Presentation: Beyond Instrument Motion: Recognizing Tissue Tension Toward Surgical Skill Assessment</td><td>Marko Haralovic, Zhiqi Miao, Alexander Machiel Bont, Jiapan Guo, Frans van Workum, Estefania Talavera</td></tr>
+                    <tr class="break"><td class="time">14:55 &ndash; 15:35</td><td>Coffee Break / Poster Session</td><td></td></tr>
+                    <tr class="keynote"><td class="time">15:35 &ndash; 16:15</td><td>Invited Talk</td><td>Yueming Jin</td></tr>
+                    <tr><td class="time">16:15 &ndash; 16:30</td><td>MedVidU Challenge: Introduction</td><td></td></tr>
+                    <tr><td class="time">16:30 &ndash; 16:40</td><td>Oral Presentation: Task-Conditioned Model Selection for Heterogeneous Medical Video Understanding</td><td>Mengkang Lu, Yuntian Dong, Yong Xia</td></tr>
+                    <tr><td class="time">16:40 &ndash; 16:50</td><td>Oral Presentation: SPIRAL: Structured Supervision Harvesting and Self-Refining Inference for Heterogeneous Medical Video Understanding</td><td>Podakanti Satyajith Chary, Nagarajan Ganapathy</td></tr>
+                    <tr><td class="time">16:50 &ndash; 17:00</td><td>Challenge Awards &amp; Closing Remarks</td><td></td></tr>
                 </tbody>
             </table>
+
+            <!--
+            <h3 style="margin-top: 40px;">Poster Presentations</h3>
+            <p class="muted" style="margin-bottom: 20px;">During the Coffee Break / Poster Session (14:55 &ndash; 15:35)</p>
+
+            <p style="margin-bottom: 18px;"><strong>OphEdit: Training-Free Text-Guided Editing of Ophthalmic Surgical Video</strong><br>
+            <span style="font-size: 15px;">Ritul Jangir, Arkya Jyoti Bagchi, Mangalton Okram, Saurabh Seetaram Korgaonkar, Aiman Farooq, Deepak Mishra</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>Beyond Instrument Motion: Recognizing Tissue Tension Toward Surgical Skill Assessment</strong><br>
+            <span style="font-size: 15px;">Marko Haralovic, Zhiqi Miao, Alexander Machiel Bont, Jiapan Guo, Frans van Workum, Estefania Talavera</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>MicroAUNet: Boundary-Enhanced Multi-scale Fusion with Knowledge Distillation for Colonoscopy Polyp Image Segmentation</strong><br>
+            <span style="font-size: 15px;">Ziyi Wang, Yuanmei Zhang, Baoying Ye, Yimei Jiang, Leilei Gu, Suncheng Xiang</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>RefineRank: Joint Box Refinement and Ranking for Surgical Spatio-Temporal Grounding</strong><br>
+            <span style="font-size: 15px;">Linzhe Jiang, Jiayuan Huang, Changhao Zhang, Chunyang Jiang, Zhehua Mao, Luis C. Garcia-Peraza-Herrera, Mobarak I. Hoque</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>EviRoute-Med: Query-Conditioned Coarse-to-Fine Evidence Routing for Efficient Medical Video Understanding</strong><br>
+            <span style="font-size: 15px;">Moinul Hossain, Md Kishor Morol</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>Understanding Adaptive Frame Selection in Medical Video Large Language Models through Task-Derived Evidence Supervision</strong><br>
+            <span style="font-size: 15px;">Patitapaban Palo, Abhisek Tiwari, Mattia Carletti, Fredrik K. Gustafsson, Xiao Gu, Anshul Thakur, David A. Clifton</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>Decode-Time Calibration and Query-Focused Inference for Surgical Video Understanding: A Submission to the MedVidU @ ECCV 2026 Challenge</strong><br>
+            <span style="font-size: 15px;">Valmik Nahata</span></p>
+
+            <p style="margin-bottom: 18px;"><strong>Not Every Timestep Deserves a Depth Loss: Reliability-Weighted Supervision for Endoscopic Depth Diffusion in Video</strong><br>
+            <span style="font-size: 15px;">Rayan Albokhari, Chenyu Zhang, Rui Gao, Zexi Li, Jens Rittscher</span></p>
+            -->
             </div>
         </section>
 
@@ -815,47 +724,195 @@
             <div class="section-heading"><h2>Technical Committee</h2></div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/Arun.png" alt="Arun Innanje" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=AI';">
                     <h3 class="org-name"><a href="https://scholar.google.com/citations?user=uFVI8zIAAAAJ&hl=en" target="_blank" rel="noopener">Arun Innanje</a></h3>
                     <p class="org-affil c1"><a href="https://www.uii-ai.com/" target="_blank" rel="noopener">United Imaging Intelligence</a></p>
                     <p class="org-loc">Boston, MA</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/BingFan.jpg" alt="Bing Fan" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=BF';">
                     <h3 class="org-name"><a href="https://fb-reps.github.io/" target="_blank" rel="noopener">Bing Fan</a></h3>
                     <p class="org-affil c2"><a href="https://www.unt.edu/" target="_blank" rel="noopener">University of North Texas</a></p>
                     <p class="org-loc">Denton, TX</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/Chaoyi.jpg" alt="Chaoyi Zhou" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=CZ';">
                     <h3 class="org-name"><a href="https://chaoyizh.github.io/chaoyizh-home-page/" target="_blank" rel="noopener">Chaoyi Zhou</a></h3>
                     <p class="org-affil c3"><a href="https://www.clemson.edu/" target="_blank" rel="noopener">Clemson University</a></p>
                     <p class="org-loc">Clemson, South Carolina</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/HanwenRen.jpg" alt="Hanwen Ren" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=HR';">
                     <h3 class="org-name"><a href="https://hanwen-ren.github.io/" target="_blank" rel="noopener">Hanwen Ren</a></h3>
                     <p class="org-affil c4"><a href="https://www.purdue.edu/" target="_blank" rel="noopener">Purdue University</a></p>
                     <p class="org-loc">West Lafayette, Indiana</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/ShantanuGhosh.jpg" alt="Shantanu Ghosh" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=SG';">
                     <h3 class="org-name"><a href="https://shantanu-ai.github.io/" target="_blank" rel="noopener">Shantanu Ghosh</a></h3>
                     <p class="org-affil c5"><a href="https://www.bu.edu/" target="_blank" rel="noopener">Boston University</a></p>
                     <p class="org-loc">Boston, MA</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/SihanLyu.jpg" alt="Sihan Lyu" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=SL';">
                     <h3 class="org-name"><a href="https://scholar.google.com/citations?user=wSEmOiMAAAAJ&hl=en" target="_blank" rel="noopener">Sihan Lyu</a></h3>
                     <p class="org-affil c6"><a href="https://duke.edu/" target="_blank" rel="noopener">Duke University</a></p>
                     <p class="org-loc">Durham, North Carolina</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/YuanhaoZou.png" alt="Yuanhao Zou" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=YZ';">
                     <h3 class="org-name"><a href="https://scholar.google.com/citations?user=5-EyovEAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Yuanhao Zou</a></h3>
                     <p class="org-affil c7"><a href="https://www.ucf.edu/" target="_blank" rel="noopener">University of Central Florida</a></p>
                     <p class="org-loc">Orlando, FL</p>
                 </div>
                 <div class="card p-6 text-center">
+                    <img src="img_techcommittee/Zheyuan.png" alt="Zheyuan Zhang" class="profile-img rounded-full mx-auto mb-4" onerror="this.onerror=null;this.src='https://placehold.co/128x128/131c2f/60A5FA?text=ZZ';">
                     <h3 class="org-name"><a href="https://scholar.google.com/citations?user=lHtpCNcAAAAJ&hl=en" target="_blank" rel="noopener">Zheyuan Zhang</a></h3>
                     <p class="org-affil c1"><a href="https://www.uii-ai.com/" target="_blank" rel="noopener">United Imaging Intelligence</a></p>
                     <p class="org-loc">Boston, MA</p>
                 </div>
             </div>
         </section>
+
+        <section id="callforpapers">
+            <div class="section-heading"><h2>Call for Papers</h2></div>
+            <div class="card-section">
+                <p>Please submit your manuscript formatted according to the ECCV 2026 author guidelines. Accepted papers are intended to be published in the ECCV 2026 workshop proceedings.</p>
+                <p>We encourage submissions reporting novel theories, methods, and applications of video understanding in medical and surgical settings &mdash; see the Topics of Interest below.</p>
+                <p class="note-callout"><strong>Note:</strong> MedVidU 2026 Challenge participants are <strong style="color: var(--text);">required</strong> to submit a paper. However, you can submit a paper <strong style="color: var(--text);">without</strong> taking part in the MedVidU Challenge.</p>
+
+                <div style="text-align: center; margin: 28px 0 8px;">
+                    <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/MedVidU" target="_blank" rel="noopener" class="btn btn-primary" style="color: #0b1220; font-size: clamp(15px, 1.5vw, 18px); padding: 14px 28px;">
+                        Submit on OpenReview
+                    </a>
+                </div>
+
+                <h3>Topics of Interest</h3>
+                <ul>
+                    <li>Temporal action grounding in medical video</li>
+                    <li>Dense video captioning for medical procedures</li>
+                    <li>Surgical tool detection and tracking</li>
+                    <li>Medical video foundation models and multimodal large language models</li>
+                    <li>Surgical phase and action recognition</li>
+                    <li>Medical scene understanding from videos and 3D/4D reconstruction</li>
+                    <li>Privacy-preserving analysis of surgical recordings</li>
+                    <li>Explainability and trustworthiness in AI for medical videos</li>
+                    <li>Efficient video representation learning for long medical procedures</li>
+                </ul>
+
+                <h3>Important Dates</h3>
+                <table class="dates">
+                    <tbody>
+                        <tr>
+                            <td class="label">Paper Submission</td>
+                            <td class="date"><s style="color: var(--text-faint);">July 13, 2026</s> July 27, 2026 (23:59 AoE)</td>
+                            <td class="countdown" data-deadline="2026-07-28T11:59:59Z">Loading&hellip;</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Paper Acceptance Notification</td>
+                            <td class="date">August 5, 2026</td>
+                            <td class="countdown" data-deadline="2026-08-06T11:59:59Z">Loading&hellip;</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Camera Ready</td>
+                            <td class="date">August 15, 2026</td>
+                            <td class="countdown" data-deadline="2026-08-16T11:59:59Z">Loading&hellip;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="dates-note">*All deadlines are Anywhere on Earth (AoE). Timelines are subject to change. Submit via <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/MedVidU" target="_blank" rel="noopener">OpenReview</a>.</p>
+            </div>
+        </section>
+
+        <section id="challenge">
+            <div class="section-heading"><h2>MedVidU Challenge</h2></div>
+            <div class="card-section">
+                <p>The MedVidU Challenge is built on the <a href="https://arxiv.org/abs/2512.06581" target="_blank" rel="noopener">MedVidBench</a> dataset (CVPR 2026), providing a unified evaluation across diverse tasks including Critical View of Safety (CVS) assessment, next action prediction, skill assessment, temporal action grounding, dense video captioning, and video summary &amp; region captioning. The benchmark spans four domains: laparoscopic surgery, open surgery, robotic surgery, and nursing.</p>
+
+                <p class="note-callout"><strong>Participation in the Challenge is optional.</strong> You are welcome to take part in the workshop by submitting a paper on medical video understanding without entering the Challenge &mdash; see the <a href="#callforpapers">Call for Papers</a> below for paper submission details.</p>
+
+                <div class="resource-tiles">
+                    <a class="resource-tile" href="challenge-guide.html">
+                        <div class="resource-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="resource-title">Guide</div>
+                        <div class="resource-desc">Step-by-step instructions for participating in the challenge.</div>
+                    </a>
+                    <a class="resource-tile" href="https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal" target="_blank" rel="noopener">
+                        <div class="resource-icon"><i class="fas fa-database"></i></div>
+                        <div class="resource-title">Training Data</div>
+                        <div class="resource-desc">MedVidU ECCV 2026 train/val split, hosted on Hugging Face.</div>
+                    </a>
+                    <a class="resource-tile" href="https://huggingface.co/spaces/UII-AI/MedVidBench-Leaderboard" target="_blank" rel="noopener">
+                        <div class="resource-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="resource-title">MedVidBench Leaderboard</div>
+                        <div class="resource-desc">Submit predictions on the MedVidBench test set and track standings.</div>
+                    </a>
+                </div>
+
+                <h3>Challenge Format</h3>
+                <p>See the <a href="challenge-guide.html">Challenge Guide</a> for detailed step-by-step instructions.</p>
+                <ul>
+                    <li>Download the MedVidU ECCV 2026 train/val split from <a href="https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal" target="_blank" rel="noopener">UII-AI/MedVidU_ECCV2026_TrainVal</a> and train your model.</li>
+                    <li>Run inference on the <a href="https://huggingface.co/datasets/UII-AI/MedVidBench" target="_blank" rel="noopener">MedVidBench</a> test set and submit your predictions to the <a href="https://huggingface.co/spaces/UII-AI/MedVidBench-Leaderboard" target="_blank" rel="noopener">MedVidBench Leaderboard</a>.</li>
+                    <!-- <li>Include the following with your submission: <strong>Model Name</strong>, <strong>Team Name</strong>, <strong>Authors</strong>, <strong>Institution</strong>, <strong>Email ID</strong> (mandatory for MedVidU ECCV 2026 Challenge participants), and set <strong>Remark: &ldquo;ECCV challenge&rdquo;</strong>.</li> -->
+                    <li>Challenge participants are <strong>required</strong> to submit a report on <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/MedVidU" target="_blank" rel="noopener">OpenReview</a> for the MedVidU Challenge.</li>
+                </ul>
+
+                <h3>Important Dates</h3>
+                <table class="dates">
+                    <tbody>
+                        <tr>
+                            <td class="label">Registration Opens &amp; Dataset Release (HuggingFace)</td>
+                            <td class="date live">May 20, 2026</td>
+                            <td class="countdown" style="color: #34D399; font-weight: 600;">Live now</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Public Validation Leaderboard Opens</td>
+                            <td class="date live">May 20, 2026</td>
+                            <td class="countdown" style="color: #34D399; font-weight: 600;">Live now</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Workshop Paper Submission (Mandatory for Challenge Participants)</td>
+                            <td class="date deadline"><s style="color: var(--text-faint); font-weight: 400;">July 13, 2026</s> July 27, 2026 (23:59 AoE)</td>
+                            <td class="countdown" data-deadline="2026-07-28T11:59:59Z">Loading&hellip;</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Challenge Deadline (Public Leaderboard Closes)</td>
+                            <td class="date deadline"><s style="color: var(--text-faint); font-weight: 400;">July 13, 2026</s> July 27, 2026 (23:59 AoE)</td>
+                            <td class="countdown" data-deadline="2026-07-28T11:59:59Z">Loading&hellip;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="dates-note">*Deadlines are Anywhere on Earth (AoE). Timelines are subject to change.</p>
+
+                <p style="margin-top: 24px;">Top qualifying winners will get a chance to present their method in the workshop.</p>
+                <p>We plan to have an extended journal submission with the top qualifying teams.</p>
+                <p><strong>Prizes:</strong> 1st place &mdash; $800, 2nd place &mdash; $200. Prizes are sponsored by United Imaging Intelligence (UII), Boston, MA.</p>
+            </div>
+        </section>
+
+        <!--
+        <section id="dataset">
+            <div class="section-heading"><h2>Dataset</h2></div>
+            <div class="card-section">
+                <p>MedVidBench &mdash; a multi-task medical video benchmark spanning four clinical and surgical domains.</p>
+                <div class="coming-soon" style="margin-top: 24px;">
+                    <strong>Dataset release coming soon</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="leaderboard">
+            <div class="section-heading"><h2>Leaderboard</h2></div>
+            <div class="card-section">
+                <p>Track community progress on the MedVidBench multi-task evaluation suite.</p>
+                <div class="coming-soon" style="margin-top: 24px;">
+                    <strong>Leaderboard coming soon</strong>
+                    The MedVidBench leaderboard will be hosted on HuggingFace and embedded here.
+                </div>
+            </div>
+        </section>
+        -->
 
         <section id="venue">
             <div class="section-heading"><h2>Venue &amp; Location</h2></div>
